@@ -1,12 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class RareInput extends React.Component {
   render() {
+    const { value, onChange } = this.props;
     return (
       <label>
         Raridade
         <select
           data-testid="rare-input"
+          value={ value }
+          onChange={ onChange }
         >
           <option
             value="normal"
@@ -28,5 +32,10 @@ class RareInput extends React.Component {
     );
   }
 }
+
+RareInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default RareInput;
