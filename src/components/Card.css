@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100px;
+  background-color: aqua;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
