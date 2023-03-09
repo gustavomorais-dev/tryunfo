@@ -34,6 +34,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
       deck,
     } = this.state;
     const tempState = [...deck];
@@ -48,7 +49,6 @@ class App extends React.Component {
       cardTrunfo,
     };
     tempState.push(newCard);
-    console.log(tempState);
     this.setState({
       cardName: '',
       cardDescription: '',
@@ -60,6 +60,7 @@ class App extends React.Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       deck: tempState,
+      hasTrunfo: cardTrunfo ? true : hasTrunfo,
     });
   }
 
