@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 class Attr2Input extends React.Component {
   render() {
-    const { value, onChange } = this.props;
+    const { value, onChange, name } = this.props;
     return (
       <label>
         Attr02
         <input
+          name={ name }
           data-testid="attr2-input"
           type="number"
           value={ value }
@@ -19,6 +20,7 @@ class Attr2Input extends React.Component {
 }
 
 Attr2Input.propTypes = {
+  name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

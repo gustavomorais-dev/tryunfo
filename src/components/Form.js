@@ -31,15 +31,51 @@ class Form extends React.Component {
       <div className="container">
         <h1>ADICIONE NOVA CARTA</h1>
         <form>
-          <NameInput value={ cardName } onChange={ onInputChange } />
-          <DescriptionInput value={ cardDescription } onChange={ onInputChange } />
-          <Attr1Input value={ cardAttr1 } onChange={ onInputChange } />
-          <Attr2Input value={ cardAttr2 } onChange={ onInputChange } />
-          <Attr3Input value={ cardAttr3 } onChange={ onInputChange } />
-          <ImageInput value={ cardImage } onChange={ onInputChange } />
-          <RareInput value={ cardRare } onChange={ onInputChange } />
-          <TrunfoInput checked={ cardTrunfo } onChange={ onInputChange } />
-          <SaveButton disabled={ isSaveButtonDisabled } onClick={ onSaveButtonClick } />
+          <NameInput
+            name="cardName"
+            value={ cardName }
+            onChange={ onInputChange }
+          />
+          <DescriptionInput
+            name="cardDescription"
+            value={ cardDescription }
+            onChange={ onInputChange }
+          />
+          <Attr1Input
+            name="cardAttr1"
+            value={ cardAttr1 }
+            onChange={ onInputChange }
+          />
+          <Attr2Input
+            name="cardAttr2"
+            value={ cardAttr2 }
+            onChange={ onInputChange }
+          />
+          <Attr3Input
+            name="cardAttr3"
+            value={ cardAttr3 }
+            onChange={ onInputChange }
+          />
+          <ImageInput
+            name="cardImage"
+            value={ cardImage }
+            onChange={ onInputChange }
+          />
+          <RareInput
+            name="cardRare"
+            value={ cardRare }
+            onChange={ onInputChange }
+          />
+          <TrunfoInput
+            name="cardTrunfo"
+            checked={ cardTrunfo }
+            onChange={ onInputChange }
+          />
+          <SaveButton
+            name="isSaveButtonDisabled"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          />
         </form>
       </div>
     );

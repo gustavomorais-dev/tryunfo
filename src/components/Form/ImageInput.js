@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 class ImageInput extends React.Component {
   render() {
-    const { value, onChange } = this.props;
+    const { value, onChange, name } = this.props;
     return (
       <label>
         Imagem
         <input
+          name={ name }
           data-testid="image-input"
           type="text"
           value={ value }
@@ -19,6 +20,7 @@ class ImageInput extends React.Component {
 }
 
 ImageInput.propTypes = {
+  name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 class SaveButton extends React.Component {
   render() {
-    const { disabled, onClick } = this.props;
+    const { disabled, onClick, name } = this.props;
     return (
       <div>
         <button
+          name={ name }
           data-testid="save-button"
           type="checkbox"
           disabled={ disabled }
@@ -20,6 +21,7 @@ class SaveButton extends React.Component {
 }
 
 SaveButton.propTypes = {
+  name: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 };

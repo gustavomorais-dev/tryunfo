@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 class TrunfoInput extends React.Component {
   render() {
-    const { checked, onChange } = this.props;
+    const { checked, onChange, name } = this.props;
     return (
       <label>
         Super Trybe Trunfo
         <input
+          name={ name }
           data-testid="trunfo-input"
           type="checkbox"
           checked={ checked }
@@ -19,6 +20,7 @@ class TrunfoInput extends React.Component {
 }
 
 TrunfoInput.propTypes = {
+  name: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };

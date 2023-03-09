@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 class RareInput extends React.Component {
   render() {
-    const { value, onChange } = this.props;
+    const { value, onChange, name } = this.props;
     return (
       <label>
         Raridade
         <select
+          name={ name }
           data-testid="rare-input"
           value={ value }
           onChange={ onChange }
@@ -34,6 +35,7 @@ class RareInput extends React.Component {
 }
 
 RareInput.propTypes = {
+  name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
