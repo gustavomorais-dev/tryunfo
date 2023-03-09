@@ -11,9 +11,9 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
@@ -25,10 +25,39 @@ class App extends React.Component {
   onInputChange({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    console.log(name, value);
-    this.setState({
-      [name]: value,
-    });
+    this.setState(
+      {
+        [name]: value,
+      },
+      this.saveButtonVisibilityCheck,
+    );
+  }
+
+  saveButtonVisibilityCheck() {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+    const maxAttr = 90;
+    const maxTotalAttr = 210;
+    let invalid = false;
+    const parsedAttr1 = parseInt(cardAttr1, 10);
+    const parsedAttr2 = parseInt(cardAttr2, 10);
+    const parsedAttr3 = parseInt(cardAttr3, 10);
+    if (!cardName) invalid = true;
+    if (!cardDescription) invalid = true;
+    if (!cardImage) invalid = true;
+    if (!cardRare) invalid = true;
+    if (parsedAttr1 > maxAttr || parsedAttr1 < 0) invalid = true;
+    if (parsedAttr2 > maxAttr || parsedAttr2 < 0) invalid = true;
+    if (parsedAttr3 > maxAttr || parsedAttr3 < 0) invalid = true;
+    if (parsedAttr1 + parsedAttr2 + parsedAttr3 > maxTotalAttr) invalid = true;
+    this.setState({ isSaveButtonDisabled: invalid });
   }
 
   render() {

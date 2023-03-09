@@ -9,7 +9,6 @@ class SaveButton extends React.Component {
         <button
           name={ name }
           data-testid="save-button"
-          type="checkbox"
           disabled={ disabled }
           onClick={ onClick }
         >
