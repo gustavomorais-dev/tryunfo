@@ -103,6 +103,16 @@ class App extends React.Component {
     this.setState({ isSaveButtonDisabled: invalid });
   }
 
+  deleteCard(index) {
+    const { deck } = this.state;
+    const cardToBeDeleted = deck[index];
+    if (cardToBeDeleted.cardTrunfo) {
+      this.setState({ hasTrunfo: false });
+    }
+    const tempState = deck.filter((card, id) => index !== id);
+    this.setState({ deck: tempState });
+  }
+
   render() {
     const {
       cardName,
@@ -154,6 +164,12 @@ class App extends React.Component {
                 deck.map((card, index) => (
                   <li key={ index }>
                     <Card { ...card } />
+                    <button
+                      data-testid="delete-button"
+                      onClick={ () => this.deleteCard(index) }
+                    >
+                      Excluir
+                    </button>
                   </li>
                 ))
               }
