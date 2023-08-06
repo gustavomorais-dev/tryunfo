@@ -6,7 +6,7 @@ class Attr2Input extends React.Component {
     const { value, onChange, name } = this.props;
     return (
       <label>
-        Attr02
+        Inteligência
         <input
           name={ name }
           data-testid="attr2-input"

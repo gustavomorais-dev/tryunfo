@@ -7,3 +7,65 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.container {
+  border: 2px solid #8B4513; /* Cor marrom rústico para a borda */
+  background-color: #F5DEB3; /* Cor bege claro para o fundo */
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5); /* Sombra leve */
+  border-radius: 10px;
+  margin: 10px;
+}
+
+h3 {
+  font-family: 'Georgia', serif;
+  color: #8B4513; /* Cor marrom para o título */
+}
+
+h5 {
+  font-family: 'Georgia', serif;
+  color: #4B0082; /* Cor roxa para a descrição */
+  margin-top: 10px;
+}
+
+p {
+  font-family: 'Georgia', serif;
+  color: #000; /* Cor preta para os atributos */
+  margin: 5px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+p[data-testid="rare-card"] {
+  color: #B8860B; /* Cor dourada para a raridade */
+  font-weight: bold;
+}
+
+p[data-testid="trunfo-card"] {
+  background-color: #FFD700; /* Cor amarela para Super Trunfo */
+  color: #8B4513; /* Cor marrom para o texto do Super Trunfo */
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li button {
+  width: 20%;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgb(189, 118, 118);
+  padding: 6px;
+}

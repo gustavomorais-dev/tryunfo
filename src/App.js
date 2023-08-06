@@ -25,6 +25,14 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState(
+      {
+        cardImage: 'https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/8e4c9b50b45b339.png',
+      }
+    );
+  }
+
   onSaveButtonClick() {
     const {
       cardName,
@@ -56,7 +64,7 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardImage: '',
+      cardImage: 'https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/8e4c9b50b45b339.png',
       cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
@@ -129,35 +137,37 @@ class App extends React.Component {
     } = this.state;
     return (
       <body>
-        <div>
-          <Form
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            hasTrunfo={ hasTrunfo }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-            onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onSaveButtonClick }
-          />
+        <div className='container-1'>
+          <div>
+            <Form
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+          </div>
+          <div>
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
         </div>
-        <div>
-          <Card
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
-        </div>
-        <div>
+        <div className='container-2'>
           { deck.length > 0 && (
             <ul>
               {
@@ -167,6 +177,7 @@ class App extends React.Component {
                     <button
                       data-testid="delete-button"
                       onClick={ () => this.deleteCard(index) }
+                      className='delete-button'
                     >
                       Excluir
                     </button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Card.css'
 
 class Card extends React.Component {
   render() {
@@ -27,12 +28,15 @@ class Card extends React.Component {
           { cardDescription }
         </h5>
         <p data-testid="attr1-card">
+          Poder:
           { cardAttr1 }
         </p>
         <p data-testid="attr2-card">
+          Inteligência:
           { cardAttr2 }
         </p>
         <p data-testid="attr3-card">
+          Defesa:
           { cardAttr3 }
         </p>
         <p data-testid="rare-card">

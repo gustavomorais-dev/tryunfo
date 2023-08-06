@@ -6,7 +6,7 @@ class Attr3Input extends React.Component {
     const { value, onChange, name } = this.props;
     return (
       <label>
-        Attr03
+        Defesa
         <input
           name={ name }
           data-testid="attr3-input"

@@ -1,3 +1,33 @@
-div {
-  border: 1px solid black;
+body {
+  background-color: #867878;
+}
+
+.container-1 {
+  display: flex;
+  border-bottom: 2px solid #F5DEB3;
+  background-color: #635656;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.5);
+  padding: 50px;
+}
+
+.container-2 {
+  background-color: #867878;
+  padding: 50px;
+  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
 }

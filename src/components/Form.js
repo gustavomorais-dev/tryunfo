@@ -29,7 +29,7 @@ class Form extends React.Component {
 
     return (
       <div className="container">
-        <h1>ADICIONE NOVA CARTA</h1>
+        <h1>ADICIONE UMA NOVA CARTA</h1>
         <form>
           <NameInput
             name="cardName"
